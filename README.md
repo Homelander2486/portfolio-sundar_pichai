@@ -1,2 +1,6 @@
-# portfolio-sundar_pichai
-Auto deployed portfolio website
+# Portfolio Website
+
+This portfolio was automatically deployed.
+
+Live site:
+https://Homelander2486.github.io/portfolio-sundar_pichai/
