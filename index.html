@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sundar Pichai | Executive Portfolio</title>
+  <meta name="description" content="Sundar Pichai is a global technology executive known for leading large-scale product innovation, building user-focused platforms, and guiding organizations through major shifts in cloud, artificial intelligence, search, mobile, and enterprise technology." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #07111f;
+      --navy-2: #0f2238;
+      --gold: #c9a45b;
+      --gold-soft: #f2dfad;
+      --ivory: #f8f5ee;
+      --paper: #fffdf8;
+      --muted: #687386;
+      --line: rgba(201, 164, 91, 0.28);
+      --shadow: 0 24px 70px rgba(7, 17, 31, 0.14);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--navy);
+      background:
+        radial-gradient(circle at top left, rgba(201, 164, 91, 0.16), transparent 34rem),
+        linear-gradient(180deg, var(--ivory), #ffffff 44%, var(--ivory));
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(248, 245, 238, 0.82);
+      border-bottom: 1px solid rgba(7, 17, 31, 0.08);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      box-shadow: 0 10px 24px rgba(201,164,91,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      padding: 86px 24px 64px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 7vw, 6.8rem);
+      margin: 14px 0 18px;
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 4vw, 3.6rem);
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.24rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .hero-lead {
+      max-width: 720px;
+      font-size: clamp(1.12rem, 2vw, 1.4rem);
+      color: #344258;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 32px 0;
+    }
+
+    .btn {
+      border: 1px solid transparent;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: .25s ease;
+    }
+
+    .btn.primary {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 18px 38px rgba(7,17,31,.22);
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,.68);
+      border-color: var(--line);
+      color: var(--navy);
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .contact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .portrait-card {
+      position: relative;
+      min-height: 560px;
+      border-radius: 38px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,0)),
+        linear-gradient(160deg, var(--navy), var(--navy-2));
+      color: white;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .portrait-card::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background:
+        radial-gradient(circle at 70% 20%, rgba(201,164,91,.45), transparent 24%),
+        radial-gradient(circle at 20% 90%, rgba(242,223,173,.18), transparent 30%);
+      animation: floatGlow 8s ease-in-out infinite alternate;
+    }
+
+    .portrait-content { position: relative; z-index: 1; }
+
+    .avatar {
+      width: 164px;
+      height: 164px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 36px auto;
+      font-size: 3.2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      color: var(--navy);
+      border: 8px solid rgba(255,255,255,.14);
+      box-shadow: 0 24px 60px rgba(0,0,0,.22);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .metric {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      padding: 20px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.75rem;
+      color: var(--gold-soft);
+      line-height: 1;
+    }
+
+    section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 72px 24px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 34px;
+    }
+
+    .section-head p {
+      max-width: 560px;
+      color: var(--muted);
+    }
+
+    .executive-summary {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+    }
+
+    .summary-panel, .info-card, .timeline-card, .project-card, .contact-card {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(7,17,31,.08);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 48px rgba(7,17,31,.08);
+    }
+
+    .summary-panel {
+      padding: 36px;
+      background: linear-gradient(145deg, #ffffff, #fff8e8);
+      border-color: var(--line);
+    }
+
+    .quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      margin-top: 16px;
+    }
+
+    .skills-panel {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .chip {
+      display: inline-flex;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(7,17,31,.055);
+      border: 1px solid rgba(7,17,31,.08);
+      color: #27364c;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 22px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: linear-gradient(var(--gold), transparent);
+    }
+
+    .timeline-card {
+      position: relative;
+      margin-left: 42px;
+      padding: 30px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -35px;
+      top: 33px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 4px solid var(--ivory);
+      box-shadow: 0 0 0 6px rgba(201,164,91,.16);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .date-pill {
+      white-space: nowrap;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: var(--navy);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .muted { color: var(--muted); }
+
+    ul {
+      margin: 18px 0 0 18px;
+      color: #3d4b5f;
+    }
+
+    li { margin: 8px 0; }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .info-card, .project-card, .contact-card {
+      padding: 28px;
+    }
+
+    .project-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      color: var(--navy);
+    }
+
+    .mini-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0;
+    }
+
+    .mini-chips .chip {
+      padding: 7px 10px;
+      font-size: 12px;
+      background: rgba(201,164,91,.12);
+      border-color: rgba(201,164,91,.22);
+    }
+
+    .text-link {
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .achievements {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .achievement {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.74);
+      border: 1px solid rgba(201,164,91,.22);
+      font-weight: 700;
+    }
+
+    .language-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid rgba(7,17,31,.08);
+      padding: 16px 0;
+    }
+
+    .language-row:last-child { border-bottom: 0; }
+
+    .contact-section {
+      background: linear-gradient(160deg, var(--navy), #142b46);
+      color: white;
+      max-width: none;
+      margin-top: 70px;
+    }
+
+    .contact-wrap {
+      max-width: 1180px;
+      margin: auto;
+      padding: 76px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.14);
+      color: white;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .socials a {
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: var(--gold-soft);
+      font-weight: 800;
+    }
+
+    footer {
+      text-align: center;
+      padding: 26px;
+      color: rgba(255,255,255,.7);
+      background: #050b14;
+      font-size: 14px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: reveal .7s ease forwards;
+    }
+
+    .reveal:nth-child(2) { animation-delay: .08s; }
+    .reveal:nth-child(3) { animation-delay: .16s; }
+    .reveal:nth-child(4) { animation-delay: .24s; }
+
+    @keyframes reveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes floatGlow {
+      from { transform: translate3d(-2%, -1%, 0) scale(1); }
+      to { transform: translate3d(2%, 2%, 0) scale(1.05); }
+    }
+
+    @media (max-width: 900px) {
+      .hero, .executive-summary, .grid-3, .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+      .portrait-card { min-height: auto; }
+      .section-head, .card-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .nav-links { display: none; }
+      .achievements { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .hero { padding-top: 54px; }
+      .metric-grid { grid-template-columns: 1fr; }
+      .timeline-card { margin-left: 28px; padding: 24px; }
+      .timeline::before { left: 6px; }
+      .timeline-dot { left: -29px; }
+      h1 { font-size: 3.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">SP</span>
+        <span>Sundar Pichai</span>
+      </a>
+      <div class="nav-links">
+        <a href="#summary">Profile</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Strategy</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Alphabet Inc. / Google</span>
+        <h1>Sundar Pichai</h1>
+        <p class="hero-lead">Technology leader driving global innovation, AI-first products, and scalable digital platforms.</p>
+        <p>Sundar Pichai is a global technology executive known for leading large-scale product innovation, building user-focused platforms, and guiding organizations through major shifts in cloud, artificial intelligence, search, mobile, and enterprise technology.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Connect Now</a>
+          <a class="btn secondary" href="#experience">View Leadership Journey</a>
+        </div>
+        <div class="contact-strip">
+          <span>Chief Executive Officer</span>
+          <span>•</span>
+          <span>Mountain View, California, USA</span>
+          <span>•</span>
+          <a href="mailto:sundar.pichai@example.com">sundar.pichai@example.com</a>
+        </div>
+      </div>
+
+      <aside class="portrait-card reveal">
+        <div class="portrait-content">
+          <span class="eyebrow">Executive Portfolio</span>
+          <div class="avatar">SP</div>
+          <h2>Global Technology Executive</h2>
+          <p>Building helpful technology at global scale.</p>
+        </div>
+        <div class="portrait-content metric-grid">
+          <div class="metric"><strong>20+</strong><span>Years in technology leadership</span></div>
+          <div class="metric"><strong>3</strong><span>Major leadership chapters</span></div>
+          <div class="metric"><strong>AI</strong><span>Strategic transformation focus</span></div>
+          <div class="metric"><strong>Global</strong><span>Product and platform scale</span></div>
+        </div>
+      </aside>
+    </header>
+
+    <section id="summary">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Profile</span>
+          <h2>Executive Summary</h2>
+        </div>
+        <p>Premium leadership profile designed for strategic introductions, board-level conversations, speaking engagements, and technology forums.</p>
+      </div>
+
+      <div class="executive-summary">
+        <div class="summary-panel reveal">
+          <span class="eyebrow">Leadership Philosophy</span>
+          <p class="quote">“Building helpful technology at global scale.”</p>
+        </div>
+        <div class="skills-panel reveal">
+          <span class="chip">Executive Leadership</span>
+<span class="chip">Product Strategy</span>
+<span class="chip">Artificial Intelligence</span>
+<span class="chip">Cloud Computing</span>
+<span class="chip">Search Technology</span>
+<span class="chip">Mobile Platforms</span>
+<span class="chip">Enterprise Technology</span>
+<span class="chip">Business Strategy</span>
+<span class="chip">Global Operations</span>
+<span class="chip">Team Leadership</span>
+<span class="chip">Innovation Management</span>
+<span class="chip">Public Communication</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Career</span>
+          <h2>Leadership Experience</h2>
+        </div>
+        <p>Progressive executive responsibility across product strategy, global operations, cloud, AI, search, mobile platforms, and enterprise technology.</p>
+      </div>
+      <div class="timeline">
+        
+        <article class="timeline-card reveal">
+          <div class="timeline-dot"></div>
+          <div class="card-top">
+            <div>
+              <h3>Chief Executive Officer</h3>
+              <p class="muted">Alphabet Inc. · Mountain View, California, USA</p>
+            </div>
+            <span class="date-pill">2019 — Present</span>
+          </div>
+          <p>Leads Alphabet’s long-term strategy across Google, cloud, artificial intelligence, research, platforms, and other technology ventures.</p>
+          <ul><li>Guided company-wide focus on AI-first products and responsible innovation.</li>
+<li>Oversaw global business strategy across multiple technology verticals.</li>
+<li>Represented the company in major public, investor, and policy discussions.</li></ul>
+        </article>
+        
+
+        <article class="timeline-card reveal">
+          <div class="timeline-dot"></div>
+          <div class="card-top">
+            <div>
+              <h3>Chief Executive Officer</h3>
+              <p class="muted">Google · Mountain View, California, USA</p>
+            </div>
+            <span class="date-pill">2015 — Present</span>
+          </div>
+          <p>Leads Google’s core products and services, including Search, Ads, Android, Chrome, YouTube, Google Cloud, and AI initiatives.</p>
+          <ul><li>Expanded Google’s product ecosystem across billions of users worldwide.</li>
+<li>Strengthened focus on AI, cloud, security, and user-centered product development.</li>
+<li>Scaled teams and operations across global markets.</li></ul>
+        </article>
+        
+
+        <article class="timeline-card reveal">
+          <div class="timeline-dot"></div>
+          <div class="card-top">
+            <div>
+              <h3>Product Leader</h3>
+              <p class="muted">Google · Mountain View, California, USA</p>
+            </div>
+            <span class="date-pill">2004 — 2015</span>
+          </div>
+          <p>Worked on major Google products, including Chrome, Chrome OS, Google Toolbar, and product infrastructure initiatives.</p>
+          <ul><li>Played a key role in the development and growth of Google Chrome.</li>
+<li>Helped build product strategies that improved web accessibility and speed.</li>
+<li>Led cross-functional teams across engineering, design, and business operations.</li></ul>
+        </article>
+        
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Credentials</span>
+          <h2>Education</h2>
+        </div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="info-card reveal">
+          <span class="eyebrow">Education</span>
+          <h3>MBA</h3>
+          <p class="muted">The Wharton School, University of Pennsylvania</p>
+          <p>Philadelphia, USA</p>
+          <p>Focused on business strategy, leadership, and management.</p>
+        </article>
+        
+
+        <article class="info-card reveal">
+          <span class="eyebrow">Education</span>
+          <h3>M.S. in Materials Science and Engineering</h3>
+          <p class="muted">Stanford University</p>
+          <p>California, USA</p>
+          <p>Graduate studies in engineering and technology.</p>
+        </article>
+        
+
+        <article class="info-card reveal">
+          <span class="eyebrow">Education</span>
+          <h3>B.Tech in Metallurgical Engineering</h3>
+          <p class="muted">Indian Institute of Technology Kharagpur</p>
+          <p>Kharagpur, India</p>
+          <p>Undergraduate engineering education.</p>
+        </article>
+        
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Strategic Initiatives</span>
+          <h2>Highlighted Work</h2>
+        </div>
+        <p>Selected product and organizational transformation themes across web platforms, AI, and cloud infrastructure.</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="project-card reveal">
+          <div class="project-icon">◆</div>
+          <h3>Google Chrome Growth Strategy</h3>
+          <p>Contributed to product strategy and growth of Chrome as a fast, secure, and widely adopted web browser.</p>
+          <div class="mini-chips"><span class="chip">Product Strategy</span>
+<span class="chip">Web Platforms</span>
+<span class="chip">User Experience</span></div>
+          <a class="text-link" href="https://www.google.com/chrome/" target="_blank" rel="noopener">View initiative →</a>
+        </article>
+        
+
+        <article class="project-card reveal">
+          <div class="project-icon">◆</div>
+          <h3>AI-First Product Transformation</h3>
+          <p>Led strategic direction for integrating artificial intelligence across consumer and enterprise products.</p>
+          <div class="mini-chips"><span class="chip">Artificial Intelligence</span>
+<span class="chip">Cloud</span>
+<span class="chip">Product Leadership</span></div>
+          <a class="text-link" href="https://ai.google/" target="_blank" rel="noopener">View initiative →</a>
+        </article>
+        
+
+        <article class="project-card reveal">
+          <div class="project-icon">◆</div>
+          <h3>Google Cloud Expansion</h3>
+          <p>Supported Google’s enterprise technology growth through cloud infrastructure, AI tools, and business solutions.</p>
+          <div class="mini-chips"><span class="chip">Cloud Computing</span>
+<span class="chip">Enterprise Strategy</span>
+<span class="chip">AI</span></div>
+          <a class="text-link" href="https://cloud.google.com/" target="_blank" rel="noopener">View initiative →</a>
+        </article>
+        
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Recognition</span>
+          <h2>Achievements</h2>
+        </div>
+      </div>
+      <div class="achievements">
+        <div class="achievement reveal">Recognized as one of the most influential technology leaders globally.</div><div class="achievement reveal">Led Google through major transitions in AI, cloud, mobile, and platform strategy.</div><div class="achievement reveal">Helped scale products used by billions of people worldwide.</div><div class="achievement reveal">Known for calm leadership, product clarity, and long-term technology vision.</div>
+      </div>
+    </section>
+
+    <section id="languages">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Communication</span>
+          <h2>Languages</h2>
+        </div>
+      </div>
+      <div class="summary-panel reveal">
+        <div class="language-row"><strong>English</strong><span>Professional</span></div><div class="language-row"><strong>Tamil</strong><span>Native</span></div><div class="language-row"><strong>Hindi</strong><span>Conversational</span></div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-wrap">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>Start a leadership conversation.</h2>
+          <p>Available for speaking engagements, leadership discussions, and technology forums</p>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/sundarpichai" target="_blank" rel="noopener">Linkedin</a>
+<a href="https://twitter.com/sundarpichai" target="_blank" rel="noopener">Twitter</a>
+<a href="https://www.abc.xyz/" target="_blank" rel="noopener">Portfolio</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h3>Sundar Pichai</h3>
+          <p>Chief Executive Officer, Alphabet Inc. / Google</p>
+          <p><strong>Email:</strong> <a href="mailto:sundar.pichai@example.com">sundar.pichai@example.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+1 555 010 2026">+1 555 010 2026</a></p>
+          <p><strong>Location:</strong> Mountain View, California, USA</p>
+          <p><strong>Website:</strong> <a href="https://www.abc.xyz/" target="_blank" rel="noopener">https://www.abc.xyz/</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Portfolio powered by Work2Hire · © 2026 Sundar Pichai</footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
